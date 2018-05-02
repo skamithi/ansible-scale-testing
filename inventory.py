@@ -20,7 +20,7 @@ class DockerInventory(object):
         self.hostname_base = 'ts'
         self.software_groups = ['app', 'web', 'ntp']
         self.environment_groups = ['dev', 'test', 'prod']
-        self.host_count = os.environ.get('HOST_COUNT')
+        self.host_count = int(os.environ.get('HOST_COUNT'))
         if not self.host_count:
             self.host_count = 21
 
