@@ -14,15 +14,25 @@ class DockerInventory(object):
     def __init__(self):
         self.inventory = {}
         self.docker_host = os.environ.get("DOCKER_HOST")
+        self.host_count = os.environ.get('HOST_COUNT')
+        if self.host_count:
+            self.host_count = int(self.host_count)
+        else:
+            self.host_count = 21
         if not self.docker_host:
             self.docker_host = 'localhost'
+        self.software_groups = os.environ.get("SOFTWARE_GROUPS")
+        if self.software_groups:
+            self.software_groups = [x.strip() for x in self.software_groups.split(',')]
+        else:
+            self.software_groups = ['app', 'web', 'ntp']
+        self.environment_groups = os.environ.get("ENVIRONMENT_GROUPS")
+        if self.environment_groups:
+            self.environment_groups = [x.strip() for x in self.environment_groups.split(',')]
+        else:
+            self.environment_groups = ['dev', 'test', 'prod']
         self.read_cli_args()
         self.hostname_base = 'ts'
-        self.software_groups = ['app', 'web', 'ntp']
-        self.environment_groups = ['dev', 'test', 'prod']
-        self.host_count = int(os.environ.get('HOST_COUNT'))
-        if not self.host_count:
-            self.host_count = 21
 
         if self.args.host:
             # Implement a -- host option.. Probably not needed but
