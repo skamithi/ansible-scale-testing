@@ -1,0 +1,14 @@
+---
+- block:
+  - name: copy ls to /tmp
+    archive:
+      path: /bin/ls
+      dest: /tmp/userls.tar.gz
+  - name: sleep for 5 seconds
+    pause:
+      seconds: 5
+  always:
+  - name: delete /tmp archive
+    file:
+      path: /tmp/usrls.tar.gz
+      state: absent

@@ -1,5 +1,5 @@
 ---
 - hosts: all
   tasks:
-    - include_tasks: copy_usr.yml
+    - include_tasks: repeated_tasks.yml
       with_sequence: start=0 end=1000
