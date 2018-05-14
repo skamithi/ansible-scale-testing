@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   connection: local
+  gather_facts: no
   tasks:
     - name: create several ssh docker containers
       docker_container:

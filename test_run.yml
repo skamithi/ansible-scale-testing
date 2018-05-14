@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - include_tasks: copy_usr.yml
+      with_sequence: start=0 end=1000
+
