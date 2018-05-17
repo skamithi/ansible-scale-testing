@@ -1,0 +1,5 @@
+---
+- hosts: ts21
+  tasks:
+    - include_tasks: copy_binfile.yml
+      with_sequence: start=0 end=100
