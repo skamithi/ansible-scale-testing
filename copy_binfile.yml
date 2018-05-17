@@ -6,7 +6,7 @@
       dest: "/tmp/user{{binfile}}.tar.gz"
   - name: sleep for 5 seconds
     pause:
-      seconds: 5
+      seconds: 1
   always:
   - name: delete /tmp archive
     file:

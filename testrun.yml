@@ -2,4 +2,4 @@
 - hosts: all
   tasks:
     - include_tasks: copy_binfile.yml
-      with_sequence: start=0 end=100
+      with_sequence: start=0 end=20
