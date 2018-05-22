@@ -28,5 +28,4 @@ ansible-playbook --private-key=./keys/ansible_test -i inventory.py demo.yml
 ```
 
 ## License
-
 MIT
