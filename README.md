@@ -1,6 +1,5 @@
 # Scale Testing Ansible Tower using Docker Containers
 
-
 ## Create the docker containers
 
 * Install docker-engine
@@ -27,6 +26,7 @@ It builds 21 containers by default.
 ansible-playbook --private-key=./keys/ansible_test -i inventory.py demo.yml
 
 ```
+
 ## License
 
 MIT
